@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Great+Vibes&family=Jost:wght@200;300;400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #D4A030;
+  --gold-light: #F1D898;
+  --gold-dark: #B8860B;
+  --maroon: #C41E3A;
+  --maroon-dark: #7D1225;
+  --cream: #FDFAF4;
+  --cream-2: #FAF4E8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: #2C1810;
+  font-family: 'Jost', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Ornament line */
+.ornament-line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ornament-line::before,
+.ornament-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Gold shimmer text */
+.gold-shimmer {
+  background: linear-gradient(90deg, #B8860B 0%, #F1D898 30%, #D4A030 50%, #F1D898 70%, #B8860B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Petals */
+.petal {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50% 0 50% 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* Section transitions */
+.section-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mandala background */
+.mandala-bg {
+  background-image: radial-gradient(circle at center, rgba(212, 160, 48, 0.05) 0%, transparent 70%);
+}
+
+/* Custom divider */
+.divider-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+.divider-ornament::before,
+.divider-ornament::after {
+  content: '';
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.divider-ornament::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+/* Pattern overlay */
+.pattern-overlay {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(212,160,48,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(196,30,58,0.04) 0%, transparent 50%);
+}
+
+/* Event card glow */
+.event-card-glow:hover {
+  box-shadow: 0 20px 60px rgba(212, 160, 48, 0.2), 0 0 0 1px rgba(212, 160, 48, 0.3);
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(253, 250, 244, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Countdown digit */
+.countdown-digit {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Music button pulse */
+.pulse-ring {
+  animation: pulseRing 2s ease-out infinite;
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.8; }
+  80% { transform: scale(2); opacity: 0; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* Lotus decorations */
+.lotus-border {
+  border-image: linear-gradient(135deg, #D4A030, #F1D898, #D4A030) 1;
+}
