@@ -46,7 +46,7 @@ const events = [
     time: "6:00 PM",
     description:
       "The sacred mandap is prepared under the stars. A ceremonial gathering filled with Vedic hymns and divine blessings.",
-    icon: "🕌",
+    icon: "🎆",
     color: {
       bg: "from-rose-50 to-pink-50",
       border: "border-rose-200",
